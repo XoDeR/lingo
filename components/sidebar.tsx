@@ -4,7 +4,7 @@ type Props = {
   className?: string;
 };
 
-export const SideBar = ({ className }: Props) => {
+export const Sidebar = ({ className }: Props) => {
   return (
     <div
       className={cn(
