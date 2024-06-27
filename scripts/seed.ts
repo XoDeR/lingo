@@ -38,6 +38,11 @@ const main = async () => {
       },
       {
         id: 5,
+        title: "French",
+        imageSrc: "/fr.svg",
+      },
+      {
+        id: 6,
         title: "Dutch",
         imageSrc: "/nl.svg",
       },
