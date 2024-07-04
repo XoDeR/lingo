@@ -70,6 +70,12 @@ const main = async () => {
         order: 1,
         title: "Nouns",
       },
+      {
+        id: 2,
+        unitId: 1,
+        order: 2,
+        title: "Verbs",
+      },
     ]);
 
     console.log("Seeding is finished");
