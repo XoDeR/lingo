@@ -102,6 +102,7 @@ const main = async () => {
         imageSrc: "/man.svg",
         correct: true,
         text: "el hombre",
+        audioSrc: "/es_man.mp3",
       },
     ]);
 
