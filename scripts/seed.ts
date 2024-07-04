@@ -78,6 +78,33 @@ const main = async () => {
       },
     ]);
 
+    await db.insert(schema.challenges).values([
+      {
+        id: 1,
+        lessonId: 1,
+        type: "SELECT",
+        order: 1,
+        question: 'Which one of these is "the man"?',
+      },
+      {
+        id: 2,
+        lessonId: 2,
+        type: "SELECT",
+        order: 2,
+        question: 'How to say "to walk"?',
+      },
+    ]);
+
+    await db.insert(schema.challengeOptions).values([
+      {
+        id: 1,
+        challengeId: 1,
+        imageSrc: "/man.svg",
+        correct: true,
+        text: "el hombre",
+      },
+    ]);
+
     console.log("Seeding is finished");
   } catch (error) {
     console.error(error);
