@@ -58,7 +58,18 @@ export const getUnits = cache(async () => {
 
   const normalizedData = data.map((unit) => {
     const lessonsWithCompletedStatus = unit.lessons.map((lesson) => {
-      const allCompletedChallenges;
+      const allCompletedChallenges = lesson.challenges.every((challenge) => {
+        return (
+          challenge.challengeProgress &&
+          challenge.challengeProgress.length > 0 &&
+          challenge.challengeProgress.every((progress) => progress.completed)
+        );
+      });
+
+      return { ...lesson, completed: allCompletedChallenges };
     });
+    return { ...unit, lessons: lessonsWithCompletedStatus };
   });
+
+  return normalizedData;
 });
