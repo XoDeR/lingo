@@ -4,6 +4,7 @@ import { challengeOptions, challenges } from "@/db/schema";
 import { useState } from "react";
 import { Header } from "./header";
 import { QuestionBubble } from "./question-bubble";
+import { Challenge } from "./challenge";
 
 type Props = {
   initialLessonId: number;
@@ -32,6 +33,7 @@ export const Quiz = ({
   })
 
   const challenge = challenges[activeIndex];
+  const options = challenge?.challengeOptions || [];
 
   const title = challenge.type === "ASSIST" ? "Select the correct meaning" : challenge.question;
 
@@ -52,6 +54,14 @@ export const Quiz = ({
               {challenge.type === "ASSIST" && (
                 <QuestionBubble question={challenge.question} />
               )}
+              <Challenge
+                options={options}
+                onSelect={() => { }}
+                status="none"
+                selectedOption={undefined}
+                disabled={false}
+                type={challenge.type}
+              />
             </div>
           </div>
         </div>
