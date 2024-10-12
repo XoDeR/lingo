@@ -32,6 +32,8 @@ export const Quiz = ({
     return uncompletedIndex === -1 ? 0 : uncompletedIndex;
   })
 
+  const [selectedOption, setSelectedOption] = useState<number>()
+
   const challenge = challenges[activeIndex];
   const options = challenge?.challengeOptions || [];
 
